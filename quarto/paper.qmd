@@ -1,0 +1,62 @@
+---
+title: "See the Other Side: Local Party Images and Affective Polarization"
+author: |
+  Chaoyue Wang^[Chaoyue R. Wang (`chyrwang@gmail.com`, `86-177-2387-5369`) is a senior student of Philosophy, Politics and Economics at Yuanpei College of Peking University, Beijing, China 100871.]
+abstract: |
+  
+format: 
+  pdf:
+    documentclass: article
+    pdf-engine: lualatex
+    fig_caption: yes
+    fontsize: 12pt
+    toc: false
+    indent: true
+    number-sections: true
+    fontfamily: crimson
+    linestretch: 1.5
+    geometry: margin = 1in
+    include-before: 
+      - \captionsetup{labelfont = bf, font = small} 
+      - \AtBeginEnvironment{tabular}{\small}
+      - \AtBeginEnvironment{tablenotes}{\small}
+    header-includes: 
+      - \usepackage[scale = 0.8]{sourcecodepro}
+      - \usepackage{etoolbox}
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    fig-pos: tb
+    tbl-pos: tb
+    link-citations: true
+    keep-tex: true
+    colorlinks: true
+    citecolor: RoyalBlue4
+    linkcolor: RoyalBlue4
+    urlcolor: Cyan4
+    template-partials:
+      - before-body.tex
+  html:
+    theme: [journal,custom.scss] # lumen journal flatly cosmo
+    fig-dpi: 250
+    number-sections: true
+    code-tools: true
+    toc: true
+    toc-title: Overview
+    toc-location: left
+    title-block-banner: '#f0f1f2'
+    title-block-banner-color: '#10378c'
+    comments:
+      hypothesis:
+        theme: classic
+# csl: ajps.csl
+editor: visual
+execute:
+  echo: false
+  warning: false
+  # cache: true
+date: last-modified
+date-format: long
+editor_options: 
+  chunk_output_type: console
+bibliography: references.bib
+---
