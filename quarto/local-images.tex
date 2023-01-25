@@ -8,7 +8,7 @@
 ]{article}
 
 \usepackage{amsmath,amssymb}
-\usepackage[]{libertine}
+\usepackage[]{crimson}
 \usepackage{setspace}
 \usepackage{iftex}
 \ifPDFTeX
@@ -27,7 +27,7 @@
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
 \usepackage{xcolor}
-\usepackage[margin = 1in]{geometry}
+\usepackage[margin = 1.2in]{geometry}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
@@ -163,7 +163,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={See the Other Side: How Local Party Images Moderate Affective Polarization},
+  pdftitle={Seeing the Other Side: How Local Party Images Moderate Affective Polarization},
   pdfauthor={Chaoyue Wang},
   colorlinks=true,
   linkcolor={NavyBlue},
@@ -172,8 +172,8 @@
   urlcolor={SteelBlue4},
   pdfcreator={LaTeX via pandoc}}
 
-\title{See the Other Side: How Local Party Images Moderate Affective
-Polarization}
+\title{\textbf{Seeing the Other Side: How Local Party Images Moderate
+Affective Polarization}}
 \author{Chaoyue Wang\footnote{Chaoyue R. Wang
   (\href{mailto:chyrwang@gmail.com}{\nolinkurl{chyrwang@gmail.com}},
   \texttt{86-177-2387-5369}) is a senior student of Philosophy, Politics
@@ -181,7 +181,7 @@ Polarization}
   100871. Data, codes, and other documents necessary to reproduce the
   results reported in this study are openly available at
   \url{https://github.com/Raphaellie/Local-Party-Images}.}}
-\date{October 10, 2022}
+\date{January 25, 2023}
 
 \begin{document}
 \urlstyle{tt}
@@ -194,8 +194,8 @@ Polarization}
 
 \thispagestyle{empty}
 
-\begin{abstract}  \onehalfspacing
-\begin{normalsize}  \noindent 
+\begin{abstract}
+\noindent % \onehalfspacing
 Social sorting, the situation where social groups become strongly
 interconnected with political parties, has been examined as a
 contributing factor to affective polarization in American politics. By
@@ -213,7 +213,6 @@ lower level of affective polarization is observed among the district's
 respondents. The deviation of local party images also undermines the
 influence group feelings have in people's polarization behavior.
 Heterogeneities by party and racial group are discussed.
-\end{normalsize}
 \end{abstract}
 
 \begin{quote}
@@ -230,7 +229,7 @@ Heterogeneities by party and racial group are discussed.
 
 \urlstyle{tt}
 
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, enhanced, borderline west={3pt}{0pt}{shadecolor}, interior hidden, frame hidden, breakable, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, interior hidden, boxrule=0pt, breakable, sharp corners, enhanced, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
 
 \setstretch{1.5}
 \hypertarget{introduction}{%
@@ -283,15 +282,26 @@ affective polarization between co-partisans and out-partisans
 (\protect\hyperlink{ref-mason2018a}{Mason and Wronski 2018};
 \protect\hyperlink{ref-mason2016}{Mason 2016}).
 
-As is evident in the groups approach, party images, the mental schema
-that communicates what the Republican and Democratic Parties look like
-in terms of social groups (\protect\hyperlink{ref-green2002}{Green,
-Palmquist, and Schickler 2002}; \protect\hyperlink{ref-ahler2018}{Ahler
-and Sood 2018}; \protect\hyperlink{ref-zhirkov2022}{Zhirkov and
-Valentino 2022}), play a pivotal role in connecting group identities to
-political identification. Though such images are so pervasive and
-entrenched that party and race are almost ``inseparable'' in the public
-mind (\protect\hyperlink{ref-westwood2020}{Westwood and Peterson 2020}),
+As is evident in the groups approach, party images\footnote{This same
+  concept has been called in various terms across studies. For example,
+  whereas Kane, Mason, and Wronski
+  (\protect\hyperlink{ref-kane2021}{2021}) adopt the phrase
+  ``group-party alignment knowledge'', Ahler and Sood
+  (\protect\hyperlink{ref-ahler2018}{2018}) and Zhirkov and Valentino
+  (\protect\hyperlink{ref-zhirkov2022}{2022}) respectively settle on
+  ``partisan prototypes'' and ``race-party schemas''. This paper uses
+  ``party images'', the term originally developed by Green, Palmquist,
+  and Schickler (\protect\hyperlink{ref-green2002}{2002, 8}) in
+  reference to group compositions of Democrats, Republicans, and
+  Independents.}, the mental schema that communicates what the
+Republican and Democratic Parties look like in terms of social groups
+(\protect\hyperlink{ref-green2002}{Green, Palmquist, and Schickler
+2002}; \protect\hyperlink{ref-ahler2018}{Ahler and Sood 2018};
+\protect\hyperlink{ref-zhirkov2022}{Zhirkov and Valentino 2022}), play a
+pivotal role in connecting group identities to political identification.
+Though such images are so pervasive and entrenched that party and race
+are almost ``inseparable'' in the public mind
+(\protect\hyperlink{ref-westwood2020}{Westwood and Peterson 2020}),
 variation of them still exists. To check the extent to which ``the
 parties in our heads'' moderate the linkage between group feelings and
 partisan affect, existing studies have measured and manipulated
@@ -309,26 +319,31 @@ polarization.
 With the consistent and structural influence of local context in mind
 (\protect\hyperlink{ref-campbell2006}{Campbell, Wong, and Citrin 2006};
 \protect\hyperlink{ref-hopkins2009}{Hopkins 2009};
-\protect\hyperlink{ref-wong2010}{Wong 2010}) , this study extends the
+\protect\hyperlink{ref-newman2015}{Newman et al. 2015};
+\protect\hyperlink{ref-wong2010}{Wong 2010}), this study advances the
 group-oriented research of American partisanship by looking into how the
 variation of party images among congressional districts moderates the
 connection between group thinking and affective polarization. Pooling
 the 2016 and 2020 Cooperative Election Study (CES) data, I measure the
 racialized party images of the Democratic and Republican partisans for
-every congressional district. Matching this district-level data with
-respondents in 2020 American National Election Study (ANES), I find that
-for the partisans whose group memberships rightly aligns with their
-party, affective polarization climbs up as the racial images of the two
-parties diverge further; for those embodying a ambivalent combination of
-racial and partisan identities, the increase in party image contrast
-results in a decline in affective polarization. I also show that how
-much citizens link their racial affect to partisan feelings is moderated
-by the degree to which Democrats and Republicans in their district look
-(un)like each other, thereby validating the theoretical role of
-divergence party images as an essential hinge in current
-racial-political divides.
+every congressional district. I then match this district-level data with
+respondents in 2020 American National Election Study (ANES) in which
+affective polarization is recorded for each individual.
 
-\newpage
+I find that party images, expressed in terms of white imagery, does not
+produce standalone effects on affective polarization. But when put in
+comparison, the contrast between the racial images of the two parties
+significantly influences the affective polarization level of a district.
+Specifically, for the partisans whose group memberships rightly aligns
+with their party, affective polarization climbs up as the racial images
+of the two parties diverge further; for those embodying a ambivalent
+combination of racial and partisan identities, the increase in party
+image contrast results in a decline in affective polarization. Finally,
+I show that how much citizens link their racial affect to partisan
+feelings is moderated by the degree to which Democrats and Republicans
+in their district look (un)like each other, thereby validating the
+theoretical role of divergent party images as an essential hinge in
+current racial-political divides.
 
 \hypertarget{party-images-and-affective-polarization}{%
 \section{Party Images and Affective
@@ -454,6 +469,8 @@ bands show the 95\% confidcence internals.}
 
 \end{figure}
 
+\small
+
 \hypertarget{references}{%
 \section*{References}\label{references}}
 \addcontentsline{toc}{section}{References}
@@ -474,9 +491,8 @@ in Three California Initiatives.''} \emph{Political Behavior} 28 (2):
 
 \leavevmode\vadjust pre{\hypertarget{ref-carmines1990}{}}%
 Carmines, Edward G., and James A. Stimson. 1990. \emph{Issue evolution:
-race and the transformation of American politics}. 1. Princeton
-paperback print. Princeton paperbacks Political science, American
-history. Princeton, N.J: Princeton Univ. Press.
+race and the transformation of American politics}. Princeton, N.J.:
+Princeton University Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-downs1957}{}}%
 Downs, Anthony. 1957. \emph{An Economic Theory of Democracy}. New York:
@@ -530,6 +546,13 @@ Mason, Lilliana, and Julie Wronski. 2018. {``One Tribe to Bind Them All:
 How Our Social Group Attachments Strengthen Partisanship.''}
 \emph{Political Psychology} 39 (February): 257--77.
 \url{https://doi.org/10.1111/pops.12485}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-newman2015}{}}%
+Newman, Benjamin J., Yamil Velez, Todd K. Hartman, and Alexa Bankert.
+2015. {``Are Citizens {``}Receiving the Treatment{''}? Assessing a Key
+Link in Contextual Theories of Public Opinion and Political Behavior:
+Receiving the Treatment.''} \emph{Political Psychology} 36 (1): 123--31.
+\url{https://doi.org/10.1111/pops.12069}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-valentino2005}{}}%
 Valentino, Nicholas A., and David O. Sears. 2005. {``Old Times There Are

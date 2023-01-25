@@ -1,5 +1,5 @@
 ---
-title: "See the Other Side: How Local Party Images Moderate Affective Polarization"
+title: "**Seeing the Other Side: How Local Party Images Moderate Affective Polarization**"
 author: |
   Chaoyue Wang^[Chaoyue R. Wang (<chyrwang@gmail.com>, `86-177-2387-5369`) is a senior student of Philosophy, Politics and Economics at Yuanpei College of Peking University, Beijing, China 100871. Data, codes, and other documents necessary to reproduce the results reported in this study are openly available at <https://github.com/Raphaellie/Local-Party-Images>.]
 abstract: |
@@ -13,9 +13,9 @@ format:
     toc: false
     indent: true
     number-sections: true
-    fontfamily: libertine
+    fontfamily: crimson
     linestretch: 1.5
-    geometry: margin = 1in
+    geometry: margin = 1.2in
     include-before: 
       - \captionsetup{labelfont = bf, font = small} 
       - \AtBeginEnvironment{tabular}{\small}
@@ -85,11 +85,13 @@ Their ideological differences aside, the Republican and Democratic Parties in th
 
 Such contrast has led scholars to construe the origins and consequences of mass partisanship through a perspective that centers on the role of social identities. Breaking from the instrumental tradition that largely reduces partisanship to a "running tally" of police preferences [@fiorina1981; @downs1957], the group-oriented approach to American partisanship views such identification as a expressive product of one's social thinking [@green2002; @mason2018; @kane2021; @zhirkov2022]. It contends that calling the distinct images of Republicans and Democrats to mind, individuals will decide their partisanship based upon which party most closely resembles their own social images [@green2002; @mason2018], or the images of those groups they favor [@kane2021]. In this sense, the political self is primarily an extension of one's other social selves. Scholars taking the groups approach have found that during the last decades, there is an incremental overlap between group affect and partisan affect [@zhirkov2022]. Also, a closer match of one's group identities with their party's image is associated with strengthened partisan identity and the escalation of affective polarization between co-partisans and out-partisans [@mason2018a; @mason2016].
 
-As is evident in the groups approach, party images, the mental schema that communicates what the Republican and Democratic Parties look like in terms of social groups [@green2002; @ahler2018; @zhirkov2022], play a pivotal role in connecting group identities to political identification. Though such images are so pervasive and entrenched that party and race are almost "inseparable" in the public mind [@westwood2020], variation of them still exists. To check the extent to which "the parties in our heads" moderate the linkage between group feelings and partisan affect, existing studies have measured and manipulated subjects' perceptions of party images in experimental settings. Researchers find a decline of partisan affective polarization when individuals possess weaker knowledge about what party goes with what groups [@zhirkov2022], or when their prior perceptions of a party's social makeup are challenged [@ahler2018]. Yet to the best of my knowledge, there has not been any attempt made how the variation of party images that derive from contextual, local conditions may enter into the connection between group affect and political polarization.
+As is evident in the groups approach, party images[^1], the mental schema that communicates what the Republican and Democratic Parties look like in terms of social groups [@green2002; @ahler2018; @zhirkov2022], play a pivotal role in connecting group identities to political identification. Though such images are so pervasive and entrenched that party and race are almost "inseparable" in the public mind [@westwood2020], variation of them still exists. To check the extent to which "the parties in our heads" moderate the linkage between group feelings and partisan affect, existing studies have measured and manipulated subjects' perceptions of party images in experimental settings. Researchers find a decline of partisan affective polarization when individuals possess weaker knowledge about what party goes with what groups [@zhirkov2022], or when their prior perceptions of a party's social makeup are challenged [@ahler2018]. Yet to the best of my knowledge, there has not been any attempt made how the variation of party images that derive from contextual, local conditions may enter into the connection between group affect and political polarization.
 
-With the consistent and structural influence of local context in mind [@campbell2006; @hopkins2009; @wong2010], this study extends the group-oriented research of American partisanship by looking into how the variation of party images among congressional districts moderates the connection between group thinking and affective polarization. Pooling the 2016 and 2020 Cooperative Election Study (CES) data, I measure the racialized party images of the Democratic and Republican partisans for every congressional district. Matching this district-level data with respondents in 2020 American National Election Study (ANES), I find that for the partisans whose group memberships rightly aligns with their party, affective polarization climbs up as the racial images of the two parties diverge further; for those embodying a ambivalent combination of racial and partisan identities, the increase in party image contrast results in a decline in affective polarization. I also show that how much citizens link their racial affect to partisan feelings is moderated by the degree to which Democrats and Republicans in their district look (un)like each other, thereby validating the theoretical role of divergence party images as an essential hinge in current racial-political divides.
+[^1]: This same concept has been called in various terms across studies. For example, whereas @kane2021 adopt the phrase "group-party alignment knowledge", @ahler2018 and @zhirkov2022 respectively settle on "partisan prototypes" and "race-party schemas". This paper uses "party images", the term originally developed by @green2002 [p.8] in reference to group compositions of Democrats, Republicans, and Independents.
 
-\newpage
+With the consistent and structural influence of local context in mind [@campbell2006; @hopkins2009; @newman2015; @wong2010], this study advances the group-oriented research of American partisanship by looking into how the variation of party images among congressional districts moderates the connection between group thinking and affective polarization. Pooling the 2016 and 2020 Cooperative Election Study (CES) data, I measure the racialized party images of the Democratic and Republican partisans for every congressional district. I then match this district-level data with respondents in 2020 American National Election Study (ANES) in which affective polarization is recorded for each individual.
+
+I find that party images, expressed in terms of white imagery, does not produce standalone effects on affective polarization. But when put in comparison, the contrast between the racial images of the two parties significantly influences the affective polarization level of a district. Specifically, for the partisans whose group memberships rightly aligns with their party, affective polarization climbs up as the racial images of the two parties diverge further; for those embodying a ambivalent combination of racial and partisan identities, the increase in party image contrast results in a decline in affective polarization. Finally, I show that how much citizens link their racial affect to partisan feelings is moderated by the degree to which Democrats and Republicans in their district look (un)like each other, thereby validating the theoretical role of divergent party images as an essential hinge in current racial-political divides.
 
 # Party Images and Affective Polarization
 
@@ -109,8 +111,8 @@ fig.map
 ```{r}
 #| label: fig-hist
 #| fig-cap: "**Distribution of Party Imageries and Their Gap among Congressional Districts.** The first two panels shows the distribution of the percentages of non-Hispanic whites among the Republican and Democratic partisans in a congressional district. The last panel, capturing the contrast of the white imagery between Republicans and Democrats, shows the distribution of the gap between the two percentages."
-#| fig-width: 12
-#| fig-height: 4
+#| fig-width: 10
+#| fig-asp: 0.33
 
 fig.hist
 ```
@@ -157,5 +159,7 @@ modelsummary(
 
 fig.mechanism
 ```
+
+\small
 
 # References

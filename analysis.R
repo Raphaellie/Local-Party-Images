@@ -52,6 +52,8 @@ bind_rows(gop.w,dem.w,dem.n) %>%
   theme(axis.title.x = element_blank(),
         axis.text = element_text(color = 'black'),
         aspect.ratio = 0.8,
+        # strip.text = element_text(color = 'black'),
+        # strip.background = element_blank(),
         legend.position = 'none')
 
 fig.baseline

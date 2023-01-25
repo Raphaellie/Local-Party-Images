@@ -124,7 +124,7 @@ foreach i in education income age2 age gender {
 drop VCF* Version
 
 
-save "/Users/chaoyuewang/Desktop/Measure Party Image/data/ANES cleaned.dta",replace
+// save "/Users/chaoyuewang/Desktop/Measure Party Image/data/ANES cleaned.dta",replace
 
 save "/Users/chaoyuewang/Desktop/Grammar of Graphics/Coefficients/data/ANES cleaned.dta",replace
 

@@ -31,7 +31,6 @@ map.gop <-
   theme(legend.position = 'bottom',
         plot.title = element_text(face = 'bold',hjust = 1/2,vjust = -1),
         aspect.ratio = 0.68)
-
 map.ind <- 
   ggplot(cd) + 
   geom_sf(aes(fill = Independent_White ),
@@ -57,6 +56,7 @@ map.gap <-
   theme(legend.position = 'bottom',
         plot.title = element_text(face = 'bold',hjust = 1/2,vjust = -1),
         aspect.ratio = 0.68)
+
 layout <- "
 AB
 CD
@@ -70,16 +70,19 @@ ggsave('figures/map.pdf',width = 9,height = 9)
 
 # Histogram of Racial Imageries ---- 
 
+fill.style <-   scale_fill_viridis_d(option = 'viridis',end = 0.5,direction = 1) 
+
 hist <- 
 cd %>% 
   ggplot() + 
   geom_vline(xintercept = c(0),lty = 2,color = 'black') + 
-  geom_histogram(aes(x = Republican_White - Democrat_White,fill = Republican_White - Democrat_White < 0), 
-                 alpha = 0.6,color = 'white')  + 
+  geom_histogram(aes(x = Republican_White - Democrat_White,
+                     fill = Republican_White - Democrat_White > 0), 
+                 alpha = 0.75,color = 'white')  + 
   theme_bw() + 
   ylim(c(NA,70)) + 
   xlab('White % of Republicans - Democrats') + 
-  scale_fill_viridis_d(option = 'plasma',end = 0.6) + 
+  fill.style + 
   theme(legend.position = 'none',
         aspect.ratio = 0.9,
         axis.title.y = element_blank())
@@ -88,22 +91,23 @@ hist1 <-
   cd %>% 
   ggplot() + 
   geom_vline(xintercept = c(0.5), lty = 2,color = 'black') + 
-  geom_histogram(aes(x = Democrat_White), 
-                 alpha = 0.7, fill = 'dodgerblue4',color = 'white')  + 
+  geom_histogram(aes(x = Democrat_White,fill = Democrat_White > 1/2), 
+                 alpha = 0.75, color = 'white')  + 
   theme_bw() + 
+  fill.style + 
   ylim(c(NA,70)) + 
   xlab('White % of Democrats') + 
   theme(legend.position = 'none',
         aspect.ratio = 0.9,
         axis.title.y = element_blank())
-
 hist2 <- 
   cd %>% 
   ggplot() + 
   geom_vline(xintercept = c(0.5),lty = 2,color = 'black') + 
-  geom_histogram(aes(x = Republican_White), 
-                 alpha = 0.7, fill = 'firebrick3',color = 'white')  + 
+  geom_histogram(aes(x = Republican_White,fill = Republican_White > 1/2), 
+                 alpha = 0.75,color = 'white')  + 
   theme_bw() + 
+  fill.style + 
   ylim(c(NA,70)) + 
   xlab('White % of Republicans') + 
   theme(legend.position = 'none',
