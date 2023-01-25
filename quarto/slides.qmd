@@ -1,0 +1,77 @@
+---
+title: "See the Other Side"
+subtitle: How Local Party Images Moderate Affective Polarization
+author: "Chaoyue R. Wang"
+institute: Peking University
+fig-dpi: 200
+format: 
+  revealjs:
+    theme: simple
+    highlight-style: github
+    slide-number: c/t
+execute: 
+  echo: false
+  cache: false
+editor: visual
+---
+
+# Theory
+
+## Race and Parties in U.S. Politics
+
+-   In studying US partisanship, scholars often invoke a groups approach, wherein individuals' group memberships affect their identification with the Democratic and Republican Parties.
+
+-   Reasonably accurate knowledge about how social groups align with political parties is an essential component that activates the link between group affect and party attachments.
+
+# Results
+
+```{r}
+#| label: setup
+#| wanring: false
+library(ggplot2)
+library(sjPlot)
+library(modelsummary)
+library(patchwork)
+
+load('final.Rdata')
+options(modelsummary_format_numeric_latex = "latex")
+options("modelsummary_stars_note" = FALSE)
+gm <- tibble::tribble(
+  ~raw,        ~clean,          ~fmt,
+  "nobs",      "Observations",             0,
+  "r.squared", "R squared", 3)
+table.output <- 'kableExtra'
+```
+
+## Affective Polarization and Party Images
+
+```{r}
+#| label: fig-baseline
+#| fig-cap: "**The Estimated Effect of Party Imageries on Affective Polarization by Different Types of Partisans.**  "
+#| fig-width: 8
+#| fig-asp: 0.43
+
+fig.baseline
+```
+
+## The Role of Party Image Contrast
+
+```{r}
+#| label: fig-decompose
+#| fig-cap: "**The Estimated Effect of Party Imagery on Affective Polarization, Broken Down by In-Group and Out-Group Feelings.** "
+#| fig-width: 8
+#| fig-asp: 0.4
+
+fig.decompose
+```
+
+## Influence of Racial Feelings Weakened
+
+```{r}
+#| label: fig-mechanism
+#| fig-cap: "**Greater Contrast of Party Images Accentuates the Influence of White Feelings on Voter's Affective Perception of Political Parties.**"
+#| fig-width: 8
+#| fig-asp: 0.45
+
+fig.mechanism
+```

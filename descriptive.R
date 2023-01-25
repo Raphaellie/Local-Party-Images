@@ -11,45 +11,64 @@ map.dem <-
   geom_sf(aes(fill = Democrat_White ),
           lwd = 1/5,col = 'white', alpha = 0.7)  +
   geom_sf(data =st.bound,color = 'black',fill = alpha('white',0),lwd = 1/5)  +
-  scale_fill_viridis_b(option = 'mako', begin = 0.3, end = 0.85,direction = -1,
-                       name = NULL) +
+  scale_fill_viridis_b(option = 'mako', begin = 0.2, end = 0.85,direction = 1,
+                       breaks = seq(0,1,0.2),name = NULL) +
   ggtitle('A. White % of Democrats') + 
   theme_void() +
   theme(legend.position = 'bottom',
-        plot.title = element_text(face = 'bold',hjust = 1/2),
+        plot.title = element_text(face = 'bold',hjust = 1/2,vjust = -1),
         aspect.ratio = 0.68)
-map.dem
+
 map.gop <- 
   ggplot(cd) + 
   geom_sf(aes(fill = Republican_White ),
           lwd = 1/5,col = 'white', alpha = 0.7)  +
   geom_sf(data =st.bound,color = 'black',fill = alpha('white',0),lwd = 1/5)  +
-  scale_fill_viridis_b(option = 'magma', begin = 0.3, end = 0.85,direction = -1,
+  scale_fill_viridis_b(option = 'mako', begin = 0.2, end = 0.85,direction = 1,
                        breaks = seq(0,1,0.2),name = NULL) +
   ggtitle('B. White % of Republicans') + 
   theme_void() +
   theme(legend.position = 'bottom',
-        plot.title = element_text(face = 'bold',hjust = 1/2),
+        plot.title = element_text(face = 'bold',hjust = 1/2,vjust = -1),
+        aspect.ratio = 0.68)
+
+map.ind <- 
+  ggplot(cd) + 
+  geom_sf(aes(fill = Independent_White ),
+          lwd = 1/5,col = 'white', alpha = 0.7)  +
+  geom_sf(data =st.bound,color = 'black',fill = alpha('white',0),lwd = 1/5)  +
+  scale_fill_viridis_b(option = 'mako', begin = 0.2, end = 0.85,direction = 1,
+                       breaks = seq(0,1,0.2),name = NULL) +
+  ggtitle('C. White % of Independents') + 
+  theme_void() +
+  theme(legend.position = 'bottom',
+        plot.title = element_text(face = 'bold',hjust = 1/2,vjust = -1),
         aspect.ratio = 0.68)
 
 map.gap <- 
   ggplot(cd) + 
-  geom_sf(aes(fill = Republican_White - Democrat_White ),
+  geom_sf(aes(fill = (Republican_White - Democrat_White) ),
           lwd = 1/5,col = 'white', alpha = 0.7)  +
   geom_sf(data =st.bound,color = 'black',fill = alpha('white',0),lwd = 1/5)  +
-  scale_fill_viridis_b(option = 'cividis', begin = 0.1, end = 0.9,direction = -1,
+  scale_fill_viridis_b(option = 'cividis', begin = 0.2, end = 0.85,direction = 1,
                        name = NULL) +
-  ggtitle('C. Gap of White Imageries') + 
+  ggtitle('D. Gap of White Imageries') + 
   theme_void() +
   theme(legend.position = 'bottom',
-        plot.title = element_text(face = 'bold',hjust = 1/2),
+        plot.title = element_text(face = 'bold',hjust = 1/2,vjust = -1),
         aspect.ratio = 0.68)
+layout <- "
+AB
+CD
+"
 
-map.dem + map.gop + map.gap
-ggsave('figures/map.pdf',width = 18.6,height = 6.4)
+fig.map <- map.dem  + map.gop + map.ind +  map.gap + 
+  plot_layout(design = layout)
+
+fig.map
+ggsave('figures/map.pdf',width = 9,height = 9)
 
 # Histogram of Racial Imageries ---- 
-
 
 hist <- 
 cd %>% 
@@ -91,7 +110,8 @@ hist2 <-
         aspect.ratio = 0.9,
         axis.title.y = element_blank())
 
-ggarrange(hist2,hist1,hist,nrow = 1)
-hist2 + hist1 + hist + plot_annotation(tag_levels = 'A')
+fig.hist <- 
+  hist2 + hist1 + hist + plot_annotation(tag_levels = 'A')
+fig.hist
+
 ggsave('figures/desc-imagery-hist.pdf',width = 12, height = 4)
-mean(cd$gap,na.rm = T)
